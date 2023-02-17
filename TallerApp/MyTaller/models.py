@@ -8,7 +8,7 @@ class Cliente(models.Model):
     mail = models.CharField(max_length=150)
 
     def __str__(self):
-        return self.nombre + " " + self.apellido
+        return f"ID {self.id} - Nombre: {self.nombre} - Apellido: {self.apellido} - DNI: {self.dni} - Celular: {self.celular} - Mail: {self.mail}"
 
 class Auto(models.Model):
     patente = models.CharField(max_length=20)
@@ -16,14 +16,14 @@ class Auto(models.Model):
     modelo = models.CharField(max_length=150)
 
     def __str__(self):
-        return self.patente
+        return f"ID {self.id} - Patente: {self.patente} - Marca: {self.marca}"
 
 class Historial(models.Model):
     diagnostico = models.CharField(max_length=255)
     reparacion = models.CharField(max_length=255)
 
     def __str__(self):
-        return self.diagnostico
+        return f"ID {self.id} - Diagnostico: {self.diagnostico}"
 
 class Presupuesto(models.Model):
     detalle = models.CharField(max_length=255)
@@ -32,4 +32,4 @@ class Presupuesto(models.Model):
     estado = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.detalle
+        return f"ID {self.id} - Detalle: {self.detalle}"
