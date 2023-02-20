@@ -20,4 +20,4 @@ class PresupuestoForm(forms.Form):
     detalle = forms.CharField(max_length=255)
     costo = forms.FloatField()
     fpago = forms.CharField(max_length=25)
-    estado = forms.BooleanField(default=False)
+    estado = forms.BooleanField()
