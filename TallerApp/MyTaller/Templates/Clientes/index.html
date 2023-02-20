@@ -1,20 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de Clientes</title>
-</head>
-<body>
-    {% for c in clientes %}
-        <li>{{c}}</li>
-        <button>
-            <a href="{% url 'EditarCliente' c.dni %}">Editar</a>
-        </button>
-        <button>
-            <a href="{% url 'EliminarCliente' c.dni %}">Eliminar</a>
-        </button>
-    {% endfor %}
-</body>
-</html>
+{% extends "../Layout/base.html" %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <!-- Table -->
+            <section class="box">
+                <h3>Listado de Clientes</h3>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>Celular</th>
+                                <th>EMail</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for c in clientes %}
+                                <tr>
+                                    <td>{{c.id}}</td>
+                                    <td>{{c.nombre}}</td>
+                                    <td>{{c.apellido}}</td>
+                                    <td>{{c.celular}}</td>
+                                    <td>{{c.mail}}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+    </div>
+</div>
+{% endblock %}

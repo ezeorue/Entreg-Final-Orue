@@ -1,0 +1,20 @@
+{% extends "../Layout/base.html" %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <section class="box">
+            <form method="get" action="/search-cliente/">{% csrf_token %}
+                <div class="row gtr-uniform gtr-50">
+                    <div class="col-9 col-12-mobilep">
+                        <input type="text" name="dni" placeholder="Ingresar DNI">
+                    </div>
+                    <div class="col-3 col-12-mobilep">
+                        <input type="submit" value="Buscar" class="fit">
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+{% endblock %}

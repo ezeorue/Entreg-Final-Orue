@@ -1,0 +1,46 @@
+{% extends "../Layout/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="row">
+    <div class="col-12">
+        <section class="box">
+            <h3>Alta de Cliente</h3>
+            {% if miForm.errors %}
+                <p style="color: #ff7f7f;">Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
+            {% endif %}
+            <form method="POST" action="/add-cliente/">{% csrf_token %}
+                <div class="row gtr-uniform gtr-50">
+                    
+                    
+                        {{miForm.as_table}}
+                    
+                    <!--
+                    <div class="col-6 col-12-mobilep">
+                        <input type="text" name="nombre" value="" placeholder="Nombre">
+                    </div>
+                    <div class="col-6 col-12-mobilep">
+                        <input type="text" name="apellido" value="" placeholder="Apellido">
+                    </div>
+                    <div class="col-6 col-12-mobilep">
+                        <input type="text" name="dni" value="" placeholder="DNI">
+                    </div>
+                    <div class="col-6 col-12-mobilep">
+                        <input type="text" name="celular" value="" placeholder="Celular">
+                    </div>
+                    <div class="col-6 col-12-mobilep">
+                        <input type="email" name="mail"  value="" placeholder="Email">
+                    </div>
+
+                    -->
+                    <div class="col-12">
+                        <ul class="actions">
+                            <li><input type="submit" value="Agregar Cliente"></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+{% endblock %}
