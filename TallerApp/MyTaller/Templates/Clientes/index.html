@@ -11,6 +11,7 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
+                                <th>Dni</th>
                                 <th>Nombre</th>
                                 <th>Apellido</th>
                                 <th>Celular</th>
@@ -21,6 +22,7 @@
                             {% for c in clientes %}
                                 <tr>
                                     <td>{{c.id}}</td>
+                                    <td>{{c.dni}}</td>
                                     <td>{{c.nombre}}</td>
                                     <td>{{c.apellido}}</td>
                                     <td>{{c.celular}}</td>

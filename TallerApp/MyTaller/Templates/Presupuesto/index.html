@@ -18,38 +18,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Something</td>
-                                <td>Ante turpis integer aliquet porttitor.</td>
-                                <td>29.99</td>
-                            </tr>
-                            <tr>
-                                <td>Nothing</td>
-                                <td>Vis ac commodo adipiscing arcu aliquet.</td>
-                                <td>19.99</td>
-                            </tr>
-                            <tr>
-                                <td>Something</td>
-                                <td> Morbi faucibus arcu accumsan lorem.</td>
-                                <td>29.99</td>
-                            </tr>
-                            <tr>
-                                <td>Nothing</td>
-                                <td>Vitae integer tempus condimentum.</td>
-                                <td>19.99</td>
-                            </tr>
-                            <tr>
-                                <td>Something</td>
-                                <td>Ante turpis integer aliquet porttitor.</td>
-                                <td>29.99</td>
-                            </tr>
+                            {% for p in presupuesto %}
+                                <tr>
+                                    <td>{{p.id}}</td>
+                                    <td>{{p.detalle}}</td>
+                                    <td>{{p.costo}}</td>
+                                    <td>{{p.fpago}}</td>
+                                    <td>{% if p.estado %} Abonado {% else %} Impago {% endif %}</td>
+                                </tr>
+                            {% endfor %}
                         </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="2"></td>
-                                <td>100.00</td>
-                            </tr>
-                        </tfoot>
                     </table>
                 </div>
             </section>

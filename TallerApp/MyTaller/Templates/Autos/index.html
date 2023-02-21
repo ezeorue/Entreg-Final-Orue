@@ -14,41 +14,19 @@
                                 <th>ID</th>
                                 <th>Patente</th>
                                 <th>Marca</th>
+                                <th>Modelo</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Something</td>
-                                <td>Ante turpis integer aliquet porttitor.</td>
-                                <td>29.99</td>
-                            </tr>
-                            <tr>
-                                <td>Nothing</td>
-                                <td>Vis ac commodo adipiscing arcu aliquet.</td>
-                                <td>19.99</td>
-                            </tr>
-                            <tr>
-                                <td>Something</td>
-                                <td> Morbi faucibus arcu accumsan lorem.</td>
-                                <td>29.99</td>
-                            </tr>
-                            <tr>
-                                <td>Nothing</td>
-                                <td>Vitae integer tempus condimentum.</td>
-                                <td>19.99</td>
-                            </tr>
-                            <tr>
-                                <td>Something</td>
-                                <td>Ante turpis integer aliquet porttitor.</td>
-                                <td>29.99</td>
-                            </tr>
+                            {% for a in autos %}
+                                <tr>
+                                    <td>{{a.id}}</td>
+                                    <td>{{a.patente}}</td>
+                                    <td>{{a.marca}}</td>
+                                    <td>{{a.modelo}}</td>
+                                </tr>
+                            {% endfor %}
                         </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="2"></td>
-                                <td>100.00</td>
-                            </tr>
-                        </tfoot>
                     </table>
                 </div>
             </section>

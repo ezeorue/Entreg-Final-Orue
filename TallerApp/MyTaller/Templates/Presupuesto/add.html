@@ -1,17 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de Presupuesto</title>
-</head>
-<body>
-    {% for p in Presupuestos %}
-        <li>{{p}}</li>
-        <button>
-            <a href="{% url 'EliminarPresupuetos' p.id %}">Eliminar</a>
-        </button>
-    {% endfor %}
-</body>
-</html>
+{% extends "../Layout/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="row">
+    <div class="col-12">
+        <section class="box">
+            <h3>Alta de Presupuesto</h3>
+            {% if miForm.errors %}
+                <p style="color: #ff7f7f;">Error en los datos del Formulario</p>
+            {% endif %}
+            <form method="POST" action="/add-presupuesto/">{% csrf_token %}
+                <div class="row gtr-uniform gtr-50">
+                    
+                        {{miForm.as_table}}
+
+                    <div class="col-12">
+                        <ul class="actions">
+                            <li><input type="submit" value="Agregar Presupuesto"></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+{% endblock %}

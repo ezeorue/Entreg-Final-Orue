@@ -4,6 +4,9 @@
 <div class="row">
     <div class="col-12">
         <section class="box">
+            {% if respuesta %}
+            <p style="color: #ff7f7f;">{{ respuesta }}</p>
+            {% endif %}
             <form method="get" action="/search-cliente/">{% csrf_token %}
                 <div class="row gtr-uniform gtr-50">
                     <div class="col-9 col-12-mobilep">
