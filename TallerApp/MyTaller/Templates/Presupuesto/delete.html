@@ -5,15 +5,15 @@
 <div class="row">
     <div class="col-12">
         <section class="box">
-            <h3>Alta de Cliente</h3>
-            <form method="POST" action="/presupuesto/add/">{% csrf_token %}
+            <h3>Borrar Presupuesto</h3>
+            <form method="POST" action="/presupuesto/delete/{{object.id}}">{% csrf_token %}
                 <div class="row gtr-uniform gtr-50">
                     
-                        {{form.as_p}}
+                        <p>¿Seguro que desea borrar al Presupuesto con N° {{ object.id }}?</p>
 
                     <div class="col-12">
                         <ul class="actions">
-                            <li><input type="submit" value="Agregar Presupuesto"></li>
+                            <li><input type="submit" value="Borrar"></li>
                         </ul>
                     </div>
                 </div>

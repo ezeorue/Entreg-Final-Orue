@@ -17,6 +17,7 @@
 					<nav id="nav">
 						<ul>
 							<li><a href="{% url 'Inicio' %}">Inicio</a></li>
+							<li><a href="{% url 'Aboutme' %}">Acerca de Mí</a></li>
 							<li>
 								<a href="#" class="icon solid fa-angle-down">Menú</a>
 								<ul>
@@ -24,7 +25,7 @@
 										<a href="#">Clientes</a>
 										<ul>
 											<li><a href="{% url 'Clientes' %}">Listar</a></li>
-											<li><a href="{% url 'clienteAdd' %}">Agregar</a></li>
+											<li><a href="{% url 'ClienteAdd' %}">Agregar</a></li>
 											<li><a href="{% url 'clienteSearch' %}">Buscar</a></li>
 										</ul>
 									</li>
@@ -32,21 +33,21 @@
 										<a href="#">Autos</a>
 										<ul>
 											<li><a href="{% url 'Autos' %}">Listar</a></li>
-											<li><a href="{% url 'autoAdd' %}">Agregar</a></li>
+											<li><a href="{% url 'AutoAdd' %}">Agregar</a></li>
 										</ul>
 									</li>
 									<li>
 										<a href="#">Historiales</a>
 										<ul>
 											<li><a href="{% url 'Historiales' %}">Listar</a></li>
-											<li><a href="{% url 'historialAdd' %}">Agregar</a></li>
+											<li><a href="{% url 'HistorialAdd' %}">Agregar</a></li>
 										</ul>
 									</li>
 									<li>
 										<a href="#">Presupuestos</a>
 										<ul>
 											<li><a href="{% url 'Presupuestos' %}">Listar</a></li>
-											<li><a href="{% url 'presupuestoAdd' %}">Agregar</a></li>
+											<li><a href="{% url 'PresupuestoAdd' %}">Agregar</a></li>
 										</ul>
 									</li>
 								</ul>
@@ -59,10 +60,6 @@
                 <section id="banner">
                     <h2>MyTaller</h2>
                     <p>Servicio Online para conocer el historial de tus vehiculos.</p>
-                    <ul class="actions special">
-                        <li><a href="#" class="button primary">Sign Up</a></li>
-                        <li><a href="#" class="button">Learn More</a></li>
-                    </ul>
                 </section>
 
                 <!-- Main -->
@@ -75,7 +72,6 @@
 				<footer id="footer">
 					<ul class="icons">
 						<li><a href="https://www.instagram.com/juanzoylosquias/" target="_blank" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
 					</ul>
 					<ul class="copyright">
 						<li>&copy; MyTallerApp.</li><li>Diseño: <a href="https://www.linkedin.com/in/ezequiel-orue/" target="_blank">Ezequiel Orué</a></li>

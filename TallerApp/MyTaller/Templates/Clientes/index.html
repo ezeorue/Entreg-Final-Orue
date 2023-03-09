@@ -11,22 +11,20 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Dni</th>
                                 <th>Nombre</th>
                                 <th>Apellido</th>
-                                <th>Celular</th>
                                 <th>EMail</th>
+                                <th>Acción</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {% for c in clientes %}
+                            {% for c in object_list %}
                                 <tr>
                                     <td>{{c.id}}</td>
-                                    <td>{{c.dni}}</td>
                                     <td>{{c.nombre}}</td>
                                     <td>{{c.apellido}}</td>
-                                    <td>{{c.celular}}</td>
                                     <td>{{c.mail}}</td>
+                                    <td><a href="{% url 'ClienteView' c.id %}">Ver</a></td>
                                 </tr>
                             {% endfor %}
                         </tbody>

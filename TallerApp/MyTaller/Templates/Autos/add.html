@@ -6,13 +6,10 @@
     <div class="col-12">
         <section class="box">
             <h3>Alta de Auto</h3>
-            {% if miForm.errors %}
-                <p style="color: #ff7f7f;">Error en los datos del Formulario</p>
-            {% endif %}
-            <form method="POST" action="/add-auto/">{% csrf_token %}
+            <form method="POST" action="/auto/add/">{% csrf_token %}
                 <div class="row gtr-uniform gtr-50">
                     
-                        {{miForm.as_table}}
+                        {{form.as_p}}
 
                     <div class="col-12">
                         <ul class="actions">

@@ -15,15 +15,17 @@
                                 <th>Patente</th>
                                 <th>Marca</th>
                                 <th>Modelo</th>
+                                <th>Acción</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {% for a in autos %}
+                            {% for a in object_list %}
                                 <tr>
                                     <td>{{a.id}}</td>
                                     <td>{{a.patente}}</td>
                                     <td>{{a.marca}}</td>
                                     <td>{{a.modelo}}</td>
+                                    <td><a href="{% url 'AutoEdit' a.id %}">Editar</a> <a href="{% url 'AutoDelete' a.id %}">Eliminar</a></td>
                                 </tr>
                             {% endfor %}
                         </tbody>

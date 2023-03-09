@@ -18,6 +18,13 @@ class HistorialForm(forms.Form):
 
 class PresupuestoForm(forms.Form):
     detalle = forms.CharField(max_length=255)
-    costo = forms.FloatField()
+    costo = forms.CharField(max_length=255)
     fpago = forms.CharField(max_length=25)
     estado = forms.BooleanField(required=False,initial=False)
+
+class RegistrarMecanico(forms.Form):
+    nombre = forms.CharField(label="Nombre", max_length=100)
+    apellido = forms.CharField(label="Apellido", max_length=100)
+    nacimiento = forms.DateField()
+    mail = forms.CharField(label="E-Mail", max_length=100)
+    password = forms.CharField(label="Password",max_length=100)

@@ -16,11 +16,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for h in historial %}
+                            {% for h in object_list %}
                                 <tr>
                                     <td>{{h.id}}</td>
                                     <td>{{h.diagnostico}}</td>
                                     <td>{{h.reparacion}}</td>
+                                    <td><a href="{% url 'HistorialEdit' h.id %}">Editar</a> <a href="{% url 'HistorialDelete' h.id %}">Eliminar</a></td>
                                 </tr>
                             {% endfor %}
                         </tbody>

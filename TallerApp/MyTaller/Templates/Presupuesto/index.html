@@ -15,16 +15,28 @@
                                 <th>Costo</th>
                                 <th>Forma de Pago</th>
                                 <th>Estado</th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {% for p in presupuesto %}
+                            {% for p in object_list %}
                                 <tr>
                                     <td>{{p.id}}</td>
                                     <td>{{p.detalle}}</td>
                                     <td>{{p.costo}}</td>
-                                    <td>{{p.fpago}}</td>
+                                    <td>
+                                        {% if p.fpago == '0' %}
+                                            Débito
+                                        {% elif p.fpago == '1' %}
+                                            Crédito
+                                        {% elif p.fpago == '2' %}
+                                            Transferencia
+                                        {% elif p.fpago == '3' %}
+                                            Efectivo
+                                        {% endif %}
+                                    </td>
                                     <td>{% if p.estado %} Abonado {% else %} Impago {% endif %}</td>
+                                    <td><a href="{% url 'PresupuestoEdit' p.id %}">Editar</a> <a href="{% url 'PresupuestoDelete' p.id %}">Eliminar</a></td>
                                 </tr>
                             {% endfor %}
                         </tbody>
