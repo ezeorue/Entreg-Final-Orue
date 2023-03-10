@@ -19,7 +19,7 @@
 							<li><a href="{% url 'Inicio' %}">Inicio</a></li>
 							<li><a href="{% url 'Aboutme' %}">Acerca de Mí</a></li>
 							<li>
-								<a href="#" class="icon solid fa-angle-down">Menú</a>
+								<a href="#" class="icon solid fa-angle-down">Administrar</a>
 								<ul>
 									<li>
 										<a href="#">Clientes</a>
@@ -49,6 +49,18 @@
 											<li><a href="{% url 'Presupuestos' %}">Listar</a></li>
 											<li><a href="{% url 'PresupuestoAdd' %}">Agregar</a></li>
 										</ul>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<a href="#" class="icon solid fa-angle-down">Mecanicos</a>
+								<ul>
+									<li>
+										<a href="{% url 'MecanicoRegister' %}">Registrar</a>
+										
+									</li>
+									<li>
+										<a href="{% url 'Mecanicos' %}">Listar</a>
 									</li>
 								</ul>
 							</li>

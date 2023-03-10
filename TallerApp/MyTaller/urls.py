@@ -3,6 +3,7 @@ from MyTaller.views.views_clientes import *
 from MyTaller.views.views_autos import *
 from MyTaller.views.views_historiales import *
 from MyTaller.views.views_presupuestos import *
+from MyTaller.views.views_mecanicos import *
 from MyTaller.views.views import *
 
 urlpatterns = [
@@ -26,4 +27,6 @@ urlpatterns = [
     path('presupuesto/add/', PresupuestoAdd.as_view(), name="PresupuestoAdd"),
     path('presupuesto/edit/'r'<pk>', PresupuestoEdit.as_view(), name="PresupuestoEdit"),
     path('presupuesto/delete/'r'<pk>', PresupuestoDelete.as_view(), name="PresupuestoDelete"),
+    path('mecanico/listar', MecanicoList.as_view(), name="Mecanicos"),
+    path('mecanico/registrar', MecanicoRegister.as_view(), name="MecanicoRegister"),
 ]
