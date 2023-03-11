@@ -1,0 +1,30 @@
+{% extends "../Layout/base.html" %}
+{% load static %}
+{% block content %}
+
+<style>
+    #helptext {
+        display: none;
+    }
+</style>
+
+<div class="row">
+    <div class="col-12">
+        <section class="box">
+            <h3>Editar Usuario</h3>
+            <form method="POST" action="">
+                <div class="row gtr-uniform gtr-50">
+                        {% csrf_token %}
+                        {{form.as_table}}
+
+                    <div class="col-12">
+                        <ul class="actions">
+                            <li><input type="submit" value="Actualizar"></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+{% endblock %}

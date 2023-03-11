@@ -1,4 +1,9 @@
+import email
 from django import forms
+from dataclasses import fields
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
+
 
 class ClienteForm(forms.Form):
     nombre = forms.CharField(max_length=100)
@@ -28,3 +33,25 @@ class RegistrarMecanico(forms.Form):
     nacimiento = forms.DateField()
     mail = forms.CharField(label="E-Mail", max_length=100)
     password = forms.CharField(label="Password",max_length=100)
+
+
+class UserRegisterForm(UserCreationForm):
+    first_name = forms.CharField(label="Nombre", max_length=100)
+    last_name = forms.CharField(label="Apellido", max_length=100)
+    username = forms.CharField(label="Usuario")
+    password1 = forms.CharField(label="Contraseña", widget = forms.PasswordInput)
+    password2 = forms.CharField(label="Repetir Contraseña", widget = forms.PasswordInput)
+
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'username', 'password1', 'password2']
+        help_texts = {k:"" for k in fields}
+
+class UserEditForm(UserChangeForm):
+    first_name = forms.CharField(label="Nombre")
+    last_name = forms.CharField(label="Apellido")
+    email = forms.EmailField(label="Email")
+
+    class Meta:
+        model = User
+        fields = ["first_name", "last_name", "email"]

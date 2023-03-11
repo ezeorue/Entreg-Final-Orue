@@ -7,7 +7,13 @@
 				<h2>En nuestro taller encontrará
 				<br />
 				lo último en tecnología aplicada a su vehículo.</h2>
-				<p>Con la nueva implementación del sistema de Historial Vehicular <b>MyTallerApp</b>, tenga al alcance de su mano el estado de su Vehículo, los arreglos realizados y todo el detalle necesario para su tranquilidad.</p>
+				<p style="text-align: justify;">
+					{% if request.user.is_authenticated %}
+						<a style="color: #6a77ed;">Bienvenido {{user.first_name }} {{user.last_name}}</a>
+						<br />
+					{% endif %}
+					Con la nueva implementación del sistema de Historial Vehicular <b>MyTallerApp</b>, tenga al alcance de su mano el estado de su Vehículo, los arreglos realizados y todo el detalle necesario para su tranquilidad.
+				</p>
 			</header>
 			<span class="image featured"><img src="{% static 'images/pic01.jpg' %}" alt="" /></span>
 		</section>

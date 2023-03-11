@@ -1,15 +1,5 @@
 from django.db import models
 
-class Mecanico(models.Model):
-    nombre = models.CharField(max_length=100)
-    apellido = models.CharField(max_length=100)
-    celular = models.CharField(max_length=50)
-    user = models.CharField(max_length=100)
-    password = models.CharField(max_length=100)
-
-    def __str__(self):
-        return f"ID {self.id} - Nombre: {self.nombre} - Apellido: {self.apellido}"
-    
 class Cliente(models.Model):
     nombre = models.CharField(max_length=100)
     apellido = models.CharField(max_length=100)

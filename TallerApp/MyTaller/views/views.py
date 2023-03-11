@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
-# Vista Inicio
+from django.template import RequestContext
+
 def inicio(request):
     return render(request, 'Layout/index.html')
 

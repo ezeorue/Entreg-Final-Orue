@@ -1,14 +1,20 @@
 from django.urls import path
+from django.conf.urls import handler400
+from django.contrib.auth.views import LogoutView
 from MyTaller.views.views_clientes import *
 from MyTaller.views.views_autos import *
 from MyTaller.views.views_historiales import *
 from MyTaller.views.views_presupuestos import *
-from MyTaller.views.views_mecanicos import *
+from MyTaller.views.views_users import *
 from MyTaller.views.views import *
 
 urlpatterns = [
     path('', inicio, name="Inicio"),
-    path('aboutme', aboutme, name="Aboutme"),
+    path('registro', registro, name="Registro"),
+    path('login', login_request, name='Login'),
+    path('logout', LogoutView.as_view(template_name='Layout/logout.html'), name='Logout'),
+    path('user-edit', userEdit, name="EditUser"),
+    path('aboutme', aboutme, name="Aboutme"),    
     path('clientes/listar', ClienteList.as_view(), name='Clientes'),
     path('cliente/'r'<pk>', ClienteView.as_view(), name="ClienteView"),
     path('cliente/add/', ClienteAdd.as_view(), name="ClienteAdd"),
@@ -27,6 +33,4 @@ urlpatterns = [
     path('presupuesto/add/', PresupuestoAdd.as_view(), name="PresupuestoAdd"),
     path('presupuesto/edit/'r'<pk>', PresupuestoEdit.as_view(), name="PresupuestoEdit"),
     path('presupuesto/delete/'r'<pk>', PresupuestoDelete.as_view(), name="PresupuestoDelete"),
-    path('mecanico/listar', MecanicoList.as_view(), name="Mecanicos"),
-    path('mecanico/registrar', MecanicoRegister.as_view(), name="MecanicoRegister"),
 ]

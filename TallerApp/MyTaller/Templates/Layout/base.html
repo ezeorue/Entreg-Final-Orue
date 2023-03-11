@@ -18,6 +18,7 @@
 						<ul>
 							<li><a href="{% url 'Inicio' %}">Inicio</a></li>
 							<li><a href="{% url 'Aboutme' %}">Acerca de Mí</a></li>
+							{% if request.user.is_authenticated %}
 							<li>
 								<a href="#" class="icon solid fa-angle-down">Administrar</a>
 								<ul>
@@ -53,18 +54,24 @@
 								</ul>
 							</li>
 							<li>
-								<a href="#" class="icon solid fa-angle-down">Mecanicos</a>
+								<a href="#" class="icon solid fa-angle-down">Mecánico</a>
 								<ul>
 									<li>
-										<a href="{% url 'MecanicoRegister' %}">Registrar</a>
+										<a href="{% url 'EditUser' %}">Editar Mi Pérfil</a>
 										
 									</li>
 									<li>
-										<a href="{% url 'Mecanicos' %}">Listar</a>
+										<a href="{% url 'Registro' %}">Registrar</a>
+										
 									</li>
 								</ul>
 							</li>
-							<li><a href="#" class="button">Acceder</a></li>
+							{% endif %}
+							{% if request.user.is_authenticated %}
+								<li><a href="{% url 'Logout' %}" class="button">Logout</a></li>
+								{% else %}
+									<li><a href="{% url 'Login' %}" class="button">Acceder</a></li>
+							{% endif %}
 						</ul>
 						</nav>
 				</header>
