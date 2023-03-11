@@ -12,7 +12,7 @@ def registro(request):
         
         if form.is_valid():
             form.save() 
-            return redirect("Registro")
+            return redirect("Inicio")
     
         else:
             return render(request, "Mecanicos/register.html", {'form': form})
