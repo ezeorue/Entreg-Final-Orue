@@ -1,0 +1,33 @@
+{% extends "../Layout/base.html" %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <!-- Table -->
+            <section class="box">
+                <h3>Listado de Historiales</h3>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Diagnostico</th>
+                                <th>Reparación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for h in object_list %}
+                                <tr>
+                                    <td>{{h.id}}</td>
+                                    <td>{{h.diagnostico}}</td>
+                                    <td>{{h.reparacion}}</td>
+                                    <td><a href="{% url 'HistorialEdit' h.id %}">Editar</a> <a href="{% url 'HistorialDelete' h.id %}">Eliminar</a></td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+    </div>
+</div>
+{% endblock %}

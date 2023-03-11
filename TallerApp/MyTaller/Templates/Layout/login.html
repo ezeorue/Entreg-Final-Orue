@@ -1,0 +1,31 @@
+{% extends "../Layout/base.html" %}
+{% load static %}
+{% block content %}
+<style>
+    .errorlist {
+      display: none;
+    }
+</style>
+<div class="row">
+    <div class="col-12">
+        <section class="box">
+            <h3>Acceder a MyTallerApp</h3>
+            {% if msg %}
+                <p style="color: #ff7f7f;">{{msg}}</p>
+            {% endif %}
+            <form method="POST" action="login">{% csrf_token %}
+                <div class="row gtr-uniform gtr-50">
+                    
+                        {{form.as_p}}
+
+                    <div class="col-12">
+                        <ul class="actions">
+                            <li><input type="submit" value="Iniciar Sesión"></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+{% endblock %}

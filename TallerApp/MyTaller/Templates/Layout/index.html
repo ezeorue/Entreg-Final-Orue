@@ -1,0 +1,47 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block content %}
+
+		<section class="box special">
+			<header class="major">
+				<h2>En nuestro taller encontrará
+				<br />
+				lo último en tecnología aplicada a su vehículo.</h2>
+				<p style="text-align: justify;">
+					{% if request.user.is_authenticated %}
+						<a style="color: #6a77ed;">Bienvenido {{user.first_name }} {{user.last_name}}</a>
+						<br />
+					{% endif %}
+					Con la nueva implementación del sistema de Historial Vehicular <b>MyTallerApp</b>, tenga al alcance de su mano el estado de su Vehículo, los arreglos realizados y todo el detalle necesario para su tranquilidad.
+				</p>
+			</header>
+			<span class="image featured"><img src="{% static 'images/pic01.jpg' %}" alt="" /></span>
+		</section>
+
+		<section class="box special features">
+			<div class="features-row">
+				<section>
+					<span class="icon solid major fa-bolt accent2"></span>
+					<h3>Velocidad</h3>
+					<p>La integración de este sistema nos permite una mejor fluidez con nuestros clientes y asi optimizar tiempos de respuesta y solución.</p>
+				</section>
+				<section>
+					<span class="icon solid major fa-chart-area accent3"></span>
+					<h3>Mejores Precios</h3>
+					<p>Manejamos los mejores precios en cuanto a mano de obra y siempre trabajando con repuestos oficiales.</p>
+				</section>
+			</div>
+			<div class="features-row">
+				<section>
+					<span class="icon solid major fa-cloud accent4"></span>
+					<h3>Seguimiento Online</h3>
+					<p>Tenga al alcance de sus manos el detalle de su vehiculo, reciba alertas y notificaciones de mantenimientos.</p>
+				</section>
+				<section>
+					<span class="icon solid major fa-lock accent5"></span>
+					<h3>Seguridad</h3>
+					<p>Esta dejando su vehículo en manos especializadas, técnicos de primer nivel y todos profesionales del rubro.</p>
+				</section>
+			</div>
+		</section>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "./base.html" %}
+{% load static %}
+{% block content %}
+
+		<section class="box special">
+			<header class="major">
+				<h2>Sobre de Mí</h2>
+				<p style="text-align: justify;">Me presento, mi nombre es Ezequiel Orué tengo 36 años, pertenezco a la Comisión 34665, soy oriundo de la Provincia de Buenos Aires más precisamente Ciudadela (Partido de 3 de Febrero - Zona Oeste de Gran Buenos Aires). Trabajo en sistemas hace ya 16 años, actualmente mi rol podria estar encuadrado en los roles que realiza un DevOps, soy muy apacionado por la Técnologia y he tomado este curso debido a que Python es uno de los lenguajes que se puede llegar a usar dentro de lo que son mis tareas, aunque también ha sido por curiosidad. Sumando algún dato más tengo un hermoso Hobby que es la percusión, hace ya varios años soy el Percusionista de <a href="http://www.instagram.com/juanzoylosquias" target="_blank"><b>Juanzo y los Quías</b></a>.</p>
+			</header>
+			<span class="image featured"><img src="{% static 'images/hobby.jpg' %}" alt="" /></span>
+		</section>
+
+
+        <section class="box special">
+			<header class="major">
+				<h2>Sobre el Proyecto</h2>
+				<p style="text-align: justify;">Pensando un poco una idea y en donde poder implementar una Aplicación Web y habiendo justo tenido un problema con el auto fue que se me ocurrió una solución que podría implementarse en un taller mécanico la cual permitiese tener un historial de tu vehiculo, los arreglos realizados asi como también los presupuestos y hasta (que no esta implementado) poder abonar directamente dichos presupuestos. Obviamente por falta de tiempo y por que no vimos a detalle relaciones entre modelos, la idea es que cada cliente que se registra se le deberia poder asignar 1 o más vehiculos y a estos sus historiales asi como también los presupuetos que se podrian llegar a generar. El fin es que el sistema permita logear a los Administradores (digamos los Mécanicos) quienes podrán dar de alta los Clientes, Autos, Historiales y Presupuetos y seguramente luego continue por mi cuenta una vez finalizado el curso para poder tener la otra parte aplicada a los los Clientes, para asi poder ver sus datos, los de sus Autos y demás información relacionada a ellos.</p>
+			</header>
+			<span class="image featured"><img src="{% static 'images/python.jpg' %}" alt="" /></span>
+		</section>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "../Layout/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="row">
+    <div class="col-12">
+        <section class="box">
+            <h3>Actualiar de Historial</h3>
+            <form method="POST" action="/historial/edit/{{object.id}}">{% csrf_token %}
+                <div class="row gtr-uniform gtr-50">
+                    
+                        {{form.as_p}}
+
+                    <div class="col-12">
+                        <ul class="actions">
+                            <li><input type="submit" value="Actualizars Historial"></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+{% endblock %}

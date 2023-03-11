@@ -1,0 +1,24 @@
+{% extends "../Layout/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="row">
+    <div class="col-12">
+        <section class="box">
+            <h3>Borrar Cliente</h3>
+            <form method="POST" action="/auto/delete/{{object.id}}">{% csrf_token %}
+                <div class="row gtr-uniform gtr-50">
+                    
+                        <p>¿Seguro que desea borrar el auto {{ object.patente }} {{ object.marca }} {{ object.modelo }}?</p>
+
+                    <div class="col-12">
+                        <ul class="actions">
+                            <li><input type="submit" value="Borrar"></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
+</div>
+{% endblock %}

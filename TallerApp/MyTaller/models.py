@@ -5,10 +5,10 @@ class Cliente(models.Model):
     apellido = models.CharField(max_length=100)
     dni = models.CharField(max_length=12)
     celular = models.CharField(max_length=50)
-    mail = models.CharField(max_length=150)
+    mail = models.EmailField(max_length=150)
 
     def __str__(self):
-        return self.nombre + " " + self.apellido
+        return f"ID {self.id} - Nombre: {self.nombre} - Apellido: {self.apellido} - DNI: {self.dni} - Celular: {self.celular} - Mail: {self.mail}"
 
 class Auto(models.Model):
     patente = models.CharField(max_length=20)
@@ -16,20 +16,46 @@ class Auto(models.Model):
     modelo = models.CharField(max_length=150)
 
     def __str__(self):
-        return self.patente
+        return f"ID {self.id} - Patente: {self.patente} - Marca: {self.marca}"
 
 class Historial(models.Model):
     diagnostico = models.CharField(max_length=255)
     reparacion = models.CharField(max_length=255)
 
     def __str__(self):
-        return self.diagnostico
+        return f"ID {self.id} - Diagnostico: {self.diagnostico}"
 
 class Presupuesto(models.Model):
+    ABONADO='1'
+    IMPAGO='0'
+
+    ESTADO = [
+        (ABONADO, 'Abonado'),
+        (IMPAGO, 'Impago'),
+    ]
+
+    DEBITO='0'
+    CREDITO='1'
+    TRANSFERENCIA='2'
+    EFECTIVO='3'
+
+    FPAGO = [
+        (DEBITO, 'Débito'),
+        (CREDITO, 'Crédito'),
+        (TRANSFERENCIA, 'Transferencia'),
+        (EFECTIVO, 'Efectivo'),
+    ]
+
     detalle = models.CharField(max_length=255)
     costo = models.FloatField()
-    fpago = models.CharField(max_length=25)
-    estado = models.BooleanField(default=False)
+    fpago = models.CharField(
+        max_length=2,
+        choices=FPAGO,
+        )
+    estado = models.CharField(
+        max_length=2,
+        choices=ESTADO,
+        )
 
     def __str__(self):
-        return self.detalle
+        return f"ID {self.id} - Detalle: {self.detalle}"

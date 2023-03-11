@@ -1,0 +1,37 @@
+
+{% extends "../Layout/base.html" %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <!-- Table -->
+            <section class="box">
+                <h3>Listado de Autos</h3>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Patente</th>
+                                <th>Marca</th>
+                                <th>Modelo</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for a in object_list %}
+                                <tr>
+                                    <td>{{a.id}}</td>
+                                    <td>{{a.patente}}</td>
+                                    <td>{{a.marca}}</td>
+                                    <td>{{a.modelo}}</td>
+                                    <td><a href="{% url 'AutoEdit' a.id %}">Editar</a> <a href="{% url 'AutoDelete' a.id %}">Eliminar</a></td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+    </div>
+</div>
+{% endblock %}

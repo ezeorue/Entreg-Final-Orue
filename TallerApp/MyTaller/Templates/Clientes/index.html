@@ -1,0 +1,36 @@
+{% extends "../Layout/base.html" %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <!-- Table -->
+            <section class="box">
+                <h3>Listado de Clientes</h3>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>EMail</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for c in object_list %}
+                                <tr>
+                                    <td>{{c.id}}</td>
+                                    <td>{{c.nombre}}</td>
+                                    <td>{{c.apellido}}</td>
+                                    <td>{{c.mail}}</td>
+                                    <td><a href="{% url 'ClienteView' c.id %}">Ver</a></td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+    </div>
+</div>
+{% endblock %}
